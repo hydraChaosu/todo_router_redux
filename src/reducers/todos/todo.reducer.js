@@ -1,8 +1,12 @@
 import types from "./todo.constans";
 
 const INITIAL_STATE = {
-  todos: JSON.parse(localStorage.getItem("todos")),
-  currentId: Number(localStorage.getItem("id")),
+  todos: JSON.parse(localStorage.getItem("todos"))
+    ? JSON.parse(localStorage.getItem("todos"))
+    : [],
+  currentId: Number(localStorage.getItem("id"))
+    ? Number(localStorage.getItem("id"))
+    : 0,
 };
 
 export default function todos(state = INITIAL_STATE, action) {

@@ -65,7 +65,7 @@ const Task = ({
 
   function calcRemainingTime() {
     const time1 = new Date(`${date}`).getTime();
-    if (time1 - currentTime <= 0) return false;
+    if (time1 - currentTime <= 0 || date === "") return false;
     const remaining = ((time1 - currentTime) / 1000).toFixed();
     const hours = Math.floor(remaining / 3600);
     const minutes = Math.floor((remaining / 60) % 60);
