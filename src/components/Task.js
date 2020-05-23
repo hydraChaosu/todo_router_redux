@@ -100,11 +100,19 @@ const Task = ({
       <HeaderTask>
         <p>{title}</p>
         <div>
-          <Link to={`/edit/${id}`}>edit</Link>
+          <Link to={`/edit/${id}`}>
+            <i class="fas fa-edit"></i>
+          </Link>
           <button onClick={() => changeTodo(id)}>
-            {finished ? "UnComplete" : "Complete"}
+            {finished ? (
+              <i class="fas fa-check"></i>
+            ) : (
+              <i class="far fa-times-circle"></i>
+            )}
           </button>
-          <button onClick={() => removeTodo(id)}>Remove</button>
+          <button onClick={() => removeTodo(id)}>
+            <i class="fas fa-trash-alt"></i>
+          </button>
         </div>
       </HeaderTask>
       <InfoTask>
